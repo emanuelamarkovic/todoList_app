@@ -1,12 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { Redirect } from "expo-router";
 
 export default function Page() {
-  return (
-    <View>
-      <Text>Hello World</Text>
-    </View>
-  );
+  return <Redirect href="/(tabs)/home" />;
 }
 
 const styles = StyleSheet.create({});
