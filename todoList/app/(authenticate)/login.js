@@ -6,16 +6,23 @@ import {
   KeyboardAvoidingView,
   TextInput,
   Pressable,
-  ImageBackground,
+  TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
 const login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [secureEntry, setSecureEntry] = useState(true);
   const router = useRouter();
+
+  const toggleSecureEntry = () => {
+    setSecureEntry(!secureEntry);
+  };
+
   return (
     <SafeAreaView
       style={{ flex: 1, backgroundColor: "white", alignItems: "center" }}
@@ -51,7 +58,6 @@ const login = () => {
             />
             <TextInput
               value={email}
-              secureTextEntry={true}
               onChangeText={(text) => setEmail(text)}
               style={{
                 color: "gray",
@@ -82,6 +88,7 @@ const login = () => {
               />
               <TextInput
                 value={password}
+                secureTextEntry={secureEntry}
                 onChangeText={(text) => setPassword(text)}
                 style={{
                   color: "gray",
@@ -91,6 +98,13 @@ const login = () => {
                 }}
                 placeholder="enter your password"
               />
+              <TouchableOpacity onPress={toggleSecureEntry}>
+                <MaterialCommunityIcons
+                  name={secureEntry ? "eye-outline" : "eye-off-outline"}
+                  size={24}
+                  color="black"
+                />
+              </TouchableOpacity>
             </View>
             <View
               style={{

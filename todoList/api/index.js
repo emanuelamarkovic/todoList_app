@@ -1,6 +1,5 @@
 import express from "express";
 import bodyParser from "body-parser";
-import crypto from "crypto";
 import "./config.js";
 import cors from "cors";
 import handleRegistration from "./controller/usersControllers.js";
