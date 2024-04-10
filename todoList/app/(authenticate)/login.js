@@ -100,9 +100,10 @@ const login = () => {
               />
               <TouchableOpacity onPress={toggleSecureEntry}>
                 <MaterialCommunityIcons
+                  style={{ marginRight: 8 }}
                   name={secureEntry ? "eye-outline" : "eye-off-outline"}
                   size={24}
-                  color="black"
+                  color="grey"
                 />
               </TouchableOpacity>
             </View>
