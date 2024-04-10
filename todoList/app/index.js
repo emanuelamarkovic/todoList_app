@@ -3,7 +3,7 @@ import React from "react";
 import { Redirect } from "expo-router";
 
 export default function Page() {
-  return <Redirect href="/(tabs)/home" />;
+  return <Redirect href="/(authenticate)/login" />;
 }
 
 const styles = StyleSheet.create({});
